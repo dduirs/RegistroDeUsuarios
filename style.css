@@ -1,14 +1,19 @@
-main{
+main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 80vh;
+    height: 90vh;
+    margin-top: 3vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-form{
-    height: auto;
+form {
+    font-size: smaller;
+    margin-top: 15px;
+    max-height: 90vh;
     width: 90%;
     max-width: 400px;
     text-align: center;
@@ -20,46 +25,153 @@ form{
     box-shadow: 0px 5px 5px -5px black;
 }
 
-h3{
+h3 {
     margin: 5px;
 }
 
 
-form>label,input,select{
+label,
+input,
+select,
+button {
     margin-bottom: 20px;
-    border-radius: 3px;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
-input,select{
+input,
+select,
+button {
     border: black 3px solid;
+    text-indent: 5px;
 }
 
-input:hover,select:hover{
+input:hover,
+select:hover,
+button:hover {
     cursor: pointer;
-    border-color: yellow;
+    border: rgb(187, 0, 255) 3px solid;
+    /* border-color: rgb(187, 0, 255); */
 }
 
-#correo:valid,#contrasena:valid,#contrasena2:valid{
-    background-color: rgba(26, 136, 26, 0.571);
+#contrasena,
+#contrasena2 {
+    font-size: medium;
+    width: 162px;
+    /* input-security: auto; */
+    text-indent: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 10px;
 }
-#correo:invalid,#contrasena:invalid,#contrasena2:invalid{
+
+#passwords>label {
+    /* font-size: smaller; */
+    margin-right: 10px;
+    margin-left: -40px;
+    position: relative;
+    left: -10px;
+}
+
+#contrasena {
+    margin-left: 76px;
+}
+
+#contrasena2 {
+    /* position: absolute; */
+    margin-left: -15px;
+    margin-bottom: 15px;
+}
+
+#contrasena2:invalid:hover {
+    /* box-shadow: 0px 20px 1px 0px rgb(93 20 20 / 30%); */
+    border-color: rgb(93 20 20 / 53%);
+}
+
+#correo:valid,
+#contrasena:valid,
+#contrasena2:valid {
+    background-color: rgba(26, 136, 26, 0.571);
+    text-align: center;
+}
+
+#correo:invalid,
+#contrasena:invalid,
+#contrasena2:invalid {
     background-color: #ff00002b;
 }
 
-#passwords>legend{
+fieldset {
+    border: none;
+}
+
+#passwords>legend {
     text-align: left;
 }
 
-#passwordMismatchError{
+#passwordMismatchError {
     margin: 4px;
     color: white;
     background-color: rgba(93, 20, 20, 0.858);
     opacity: 0;
     position: relative;
-    left: 74px;
-    top: -20px;
+    left: 14px;
+    top: -24px;
     padding-left: 20px;
     padding-right: 30px;
+    padding-bottom: 5px;
+    margin-bottom: -11px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+#revealPassword {
+    top: 8px;
+    position: relative;
+    background: transparent;
+    border: none;
+    scale: 110%;
+    margin-left: 3px;
+}
+
+#cumpleanos {
+    margin-top: 5px;
+}
+
+#pais {
+    width: 182px;
+    text-align: center;
+}
+
+#pais:focus-within {
+    width: 182px;
+    text-align: left;
+}
+
+#resetForm,
+#enviar {
+    width: 120px;
+    /* font-weight: bold; */
+    color: rgb(107, 105, 105);
+    padding: 5px;
+    background-color: #ff00002b;
+    border-radius: 8px;
+}
+
+#resetForm {
+    margin-right: 20px;
+}
+
+footer {
+    justify-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* <select> element */
+
+/* You can also use the :open pseudo-class to style a <select> element when it is in the open state,
+    that is, when the drop-down options list is displayed. This doesn't apply to multi-line <select> elements 
+    (those with the multiple attribute set) — they tend to render as a scrolling list box rather than a
+    drop-down, so don't have an open state. */

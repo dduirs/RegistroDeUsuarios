@@ -1,26 +1,52 @@
+// "use strict";   // The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+                // With strict mode, you can not, for example, use undeclared variables.
+
+// alert("Entra tus detalles para registrar usuario nuevo.");
+
+// usar POST no GET
+
 "use strict";
 var formElement1 = document.forms[0].elements[0];
 formElement1.setAttribute("style","color:blue");
 
-var passwordInput = document.getElementById("revealPassword");
+// var miVentana;
+// function abrir() { miVentana = window.open( "", "Log in",
+//     "height=200,width=700,location=yes,resizable=yes,scrollbars=yes" );
+// }
+// abrir();
+
+// confirm("Do you want to log in? "+location.pathname);
+
+
+
+var passwordView = document.getElementById("revealPassword");
 var password = document.getElementById("contrasena");
 var password2 = document.getElementById("contrasena2");
+
+
 
 function ensenarContrasenar(){
     
     if(password.getAttribute("type") == 'password'){
         password.setAttribute("type","text");
         password2.setAttribute("type","text");
+        passwordView.firstElementChild.innerHTML = `<path d="M12 6.5c2.76 0 5 2.24 5 5 0 .51-.1 1-.24 1.46l3.06 3.06c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l2.17
+            2.17c.47-.14.96-.24 1.47-.24ZM3.42 2.45 2.01 3.87l2.68 2.68A11.738 11.738 0 0 0 1 11.5C2.73 15.89 7 19 12 19c1.52 0 2.97-.3 4.31-.82l3.43 3.43
+            1.41-1.41L3.42 2.45ZM12 16.5c-2.76 0-5-2.24-5-5 0-.77.18-1.5.49-2.14l1.57 1.57c-.03.18-.06.37-.06.57 0 1.66 1.34 3 3 3 .2 0 .38-.03.57-.07L14.14
+            16c-.65.32-1.37.5-2.14.5Zm2.97-5.33a2.97 2.97 0 0 0-2.64-2.64l2.64 2.64Z" fill="currentColor"></path>`;
     }
     else{
+        passwordView.firstElementChild.innerHTML = `<path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+            5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="currentColor"></path>`;
         password.setAttribute("type","password");
         password2.setAttribute("type","password");
     }
 }
 
-passwordInput.addEventListener('click',()=>{
+passwordView.addEventListener('click',()=>{
     ensenarContrasenar();
 });
+// TODO: 
 
 password2.addEventListener('blur',()=>{
     const errorPassword = document.getElementById("passwordMismatchError");
@@ -44,16 +70,82 @@ password2.addEventListener('blur',()=>{
      }
     });
 
+    // Note: Input restrictions are not foolproof, and JavaScript provides many ways to add illegal input. 
+    // To safely restrict input, it must also be checked by the receiver (the server)! 
+
+// var formElement2 = document.getElementById("nombre").form;
+// formElement2.elements[1].setAttribute("style","color:red");
+
+document.getElementById("cumpleanos").defaultValue = "1965-06-01";
+
+// document.getElementById('enviar').addEventListener('click', validar, false);
+
+// valor = document.getElementById("corro").value;
+// if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+// return false;}
+
+// /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/  email regex
+
+// /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/ password regex
+
+    // password must contain 1 number (0-9)
+    // password must contain 1 uppercase letters
+    // password must contain 1 lowercase letters
+    // password must contain 1 non-alpha numeric character
+    // password is 8-16 characters with no space
+
+
+
+// const email = document.getElementById("mail");
+
+// email.addEventListener("input", function (event) {
+//   if (email.validity.typeMismatch) {
+//     email.setCustomValidity(
+//       "¡Se esperaba una dirección de correo electrónico!",
+//     );
+//   } else {
+//     email.setCustomValidity("");
+//   }
+// });
+
+// alert(window.navigator.userAgent);
+
+
+// alert(window.screen.height);
+
+// const options = {
+//     enableHighAccuracy: true,
+//     timeout: 5000,
+//     maximumAge: 0,
+//   };
+  
+//   function success(pos) {
+//     const crd = pos.coords;
+  
+//     console.log("Your current position is:");
+//     console.log(`Latitude : ${crd.latitude}`);
+//     console.log(`Longitude: ${crd.longitude}`);
+//     console.log(`More or less ${crd.accuracy} meters.`);
+//   }
+  
+//   function error(err) {
+//     console.warn(`ERROR(${err.code}): ${err.message}`);
+//   }
+  
+//   navigator.geolocation.getCurrentPosition(success, error, options);
+
+// Aa1234!2
+
 var formSendBtn = document.getElementById("enviar");
 formSendBtn.addEventListener('click',()=>
     {
     // var formValid = true;
     // var a = 0;
 
-        // if(document.forms[0].checkValidity()){
-            alert("Los datos han enviado correctamente");c
+        if(document.forms[0].checkValidity()){
+            alert("Los datos han enviado correctamente");
             // alert("Los datos han enviado correctamente a las "+ new Date().getHours +" y "+ new Date().getMinutes);
-        // }
+        }
     //     else{
     //         formValid = false;
     //         // break;

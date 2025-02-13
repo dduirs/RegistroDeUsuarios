@@ -7,6 +7,7 @@
     <title>Log in</title>
     <base href="./" target="_parent">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleLogin.css">
 </head>
 
 <noscript>
@@ -18,9 +19,32 @@
     
     <div>
         <main>
+            <form action="inicio.html" method="POST" target="_parent">
+                
                 <header><h3>Log in</h3></header>
 
+                <label for="correo" style="opacity:0">Correo electrónico:</label><br>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
+                    autocomplete="email" required="required" title="Escribe un correo electrónico valido"
+                    tabindex="1" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
+                <br>
+                <label for="contrasenaLogin" style="opacity:0">Contraseña:</label><br>
+                <input type="password" id="contrasena" name="contrasenaLogin" placeholder="contraseña" required="required" minlength="8"
+                    pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                <button type="button" id="revealPassword">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+                            5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
+                        </path>
+                    </svg>
+                </button>
+                <br>
+                <input id="recordarCuenta" type="checkbox" name="recordarCuenta">
+                <label for="recordarCuenta">Recordar mi cuenta</label>
+                
+                <input type="submit" id="enviar" value="Iniciar sesión">
 
         </main>
     </div>
+    <script src="login.js" defer="defer"></script>
 </body>
