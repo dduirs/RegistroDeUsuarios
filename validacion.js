@@ -5,9 +5,9 @@
 
 // usar POST no GET
 
-"use strict";
-var formElement1 = document.forms[0].elements[0];
-formElement1.setAttribute("style","color:blue");
+// "use strict";
+// var formElement1 = document.forms[0].elements[0];
+// formElement1.setAttribute("style","color:blue");
 
 // var miVentana;
 // function abrir() { miVentana = window.open( "", "Log in",
@@ -22,7 +22,7 @@ formElement1.setAttribute("style","color:blue");
 var passwordView = document.getElementById("revealPassword");
 var password = document.getElementById("contrasena");
 var password2 = document.getElementById("contrasena2");
-
+var resetBtn = document.getElementById("resetForm");
 
 
 function ensenarContrasenar(){
@@ -57,7 +57,7 @@ password2.addEventListener('blur',()=>{
         password2.setCustomValidity("password mismatch");
         if(password2.getAttribute('isvalid') == 'false'){
             alert("Password mismatch!");
-            errorPassword.setAttribute("style","opacity:0.8")
+            errorPassword.setAttribute("style","opacity:1")
             if(password2.getAttribute("type") == 'password'){
                 ensenarContrasenar();
             }
@@ -76,7 +76,14 @@ password2.addEventListener('blur',()=>{
 // var formElement2 = document.getElementById("nombre").form;
 // formElement2.elements[1].setAttribute("style","color:red");
 
-document.getElementById("cumpleanos").defaultValue = "1965-06-01";
+var birthday = document.getElementById("cumpleanos");
+
+
+// birthday.setCustomValidity("noCambiado");
+
+birthday.addEventListener('focusout',()=>{
+    birthday.setCustomValidity("");
+});
 
 // document.getElementById('enviar').addEventListener('click', validar, false);
 
@@ -136,6 +143,13 @@ document.getElementById("cumpleanos").defaultValue = "1965-06-01";
 
 // Aa1234!2
 
+resetBtn.addEventListener('click', ()=>{
+    if(confirm("¿Estas seguro que quieres borrar todo?")){
+        resetBtn.setAttribute("type","reset");
+        alert("formulario vaciado");
+    };
+});
+
 var formSendBtn = document.getElementById("enviar");
 formSendBtn.addEventListener('click',()=>
     {
@@ -165,4 +179,9 @@ formSendBtn.addEventListener('click',()=>
     //     // alert("Los datos han enviado correctamente");
     //     document.forms[0].requestSubmit(formSendBtn);
     // }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    birthday.setAttribute("value","1965-06-01");
+    birthday.setCustomValidity("cambiar la fecha");
 });

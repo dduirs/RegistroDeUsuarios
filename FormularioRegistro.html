@@ -18,62 +18,71 @@
     
     <div>
         <main>
-            <form action="Login.html" method="POST" target="_parent">
-                <header><h3>Registrar usuario</h3></header>
-                <br>
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" class="nombres incompleto" name="nombre" placeholder=" "
-                autocomplete="given-name" required="required" autocapitalize="words" tabindex="10" autofocus> 
-                <!-- TODO: check tabindex & classes -->
-                 <br>
-                <label for="correo">Correo electrónico:</label> 
-                <input type="email" id="correo" class="incompleto" name="correo" placeholder="ejemplo@correo.es"
-                    autocomplete="email" required="required" title="Escribe un correo electrónico valido"
-                    tabindex="1" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
-                    <!-- TODO: validate email --> <!-- TODO: check tabindex & classes & title-->
-                    <br><br>
-                    <fieldset id="passwords"> 
-                        <legend>Crear contraseña: </legend>
+            <header><h2>Registrar usuario</h2></header>
+            <form id="registro" action="Login.html" method="POST" target="_parent">
+                 
+                <div id="labels">
+                    <label for="nombre">Nombre:</label>
 
-                        <input type="password" id="contrasena" name="contrasena" required="required" minlength="8"
-                        pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
-                        <button type="button" id="revealPassword">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
-                                    5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
-                                </path>
-                            </svg>
-                        </button>
+                    <label for="correo">Correo electrónico:</label> 
+                    
+                    <label for="contrasena">Contraseña:</label>
 
-                        <br>
-                        <label for="contrasena2">Confirmar:</label>
-                        <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8"
-                        pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
-                    </fieldset>
+                    <label for="contrasena2">Confirmar:</label>
+                     
+                    <label for="cumpleanos">Fecha de nacimiento:</label>
+                     
+                    <label for="genero">Genero:</label>
+                     
+                    <label for="pais">País de residencia:</label>
+                     
+                    <label for="tyc">Acepto los términos y condiciones:</label>
+                </div>
+                <div id="inputs">
+                    <input type="text" id="nombre" class="nombres incompleto" name="nombre" placeholder=" "
+                    autocomplete="given-name" required="required" autocapitalize="words" tabindex="1" autofocus> 
+                    <!-- TODO: check tabindex & classes -->
+                     
+                    <input type="email" id="correo" class="incompleto" name="correo" placeholder="ejemplo@correo.es"
+                        autocomplete="email" required="required" title="Escribe un correo electrónico valido"
+                        tabindex="2" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
+                        <!-- TODO: validate email --> <!-- TODO: check tabindex & classes & title-->
+                      
+                    <!-- <legend>Crear contraseña: </legend> -->
+                    <input type="password" id="contrasena" name="contrasena" required="required" minlength="8"
+                    tabindex="3" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                    <button type="button" id="revealPassword">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+                                5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
+                            </path>
+                        </svg>
+                    </button>
+                    
                     <span id="passwordMismatchError"></span>
-                
-                <br>
-                <!-- TODO: make sure default values are not unchanged, or changed back to -->
-                <label for="cumpleanos">Fecha de nacimiento:</label>
-                <input id="cumpleanos" class="" name="cumpleanos" type="date" required="required" placeholder="01/06/2010">  
-                
-                <br>
-                <label for="genero" placeholder=" ">Genero:</label>
-                <select id="genero" class="nombres" name="genero" required="required" tabindex="6">
-                    <option value="otro">Otro</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="noContesta">Prefiero no contestar</option>
-                </select>
-                <!-- TODO: check tabindex & classes -->
-                
-                <br>
-                <label for="pais">País de residencia:</label>
-                <div class="otherInput">
-                     <!-- TODO: check class -->
-                    <select id="pais" class="dropDown incompleto" name="pais" required="required" tabindex="13">
+                     
+                    <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8"
+                    tabindex="4" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+
+                    
+                     
+                    <!-- TODO: make sure default values are not unchanged, or changed back to -->
+                    <input id="cumpleanos" class="" name="cumpleanos" type="date" required="required" tabindex="5" placeholder="">  
+                    
+                     
+                    <select id="genero" class="nombres" name="genero" required="required" tabindex="6">
+                        <option value=""></option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="otro">Otro</option>
+                        <option value="noContesta">Prefiero no contestar</option>
+                    </select>
+                    <!-- TODO: check tabindex & classes -->
+                     
+                    <!-- TODO: check class -->
+                    <select id="pais" class="dropDown incompleto" name="pais" required="required" tabindex="7">
                         <!-- TODO: check tabindex & classes -->
-                        <option value="0" label="Seleccione un país" selected="selected">Seleccione un país</option>
+                        <option value="" label="Seleccione un país" selected="selected">Seleccione un país</option>
                         <optgroup id="optgroup-Europe" label="Europa">
                             <option value="AL" label="Albania">Albania</option>
                             <option value="AD" label="Andorra">Andorra</option>
@@ -340,18 +349,17 @@
                     </select>
                     <!-- TODO: pon un comentario para presione la tecla de la primera letra del pais,
                     o mas veces para encontrar su pais -->
+
+                    <input id="tyc" type="checkbox" name="tyc" required="required" tabindex="8">
+                     
+                    <!-- <input form="formCV" id="submitButton" type="submit" value="Enviar"> -->
+                    <!-- TODO: what's better here ^ for submit, a button or an input? -->
                 </div>
-
-                <input id="tyc" type="checkbox" name="tyc" required="required">
-                <label for="tyc">Acepto los términos y condiciones</label>
-                <br>
-
-                <!-- <input form="formCV" id="submitButton" type="submit" value="Enviar"> -->
-                <input form="formCV" type="reset" id="resetForm" value="Restablecer">
-                <button type="submit" id="enviar">Enviar</button>
-                <!-- TODO: what's better here ^ for submit, a button or an input? -->
-                
             </form>
+            <footer id="formFooter">
+                <input form="registro" type="button" id="resetForm" value="Restablecer" tabindex="9">
+                <button form="registro" type="submit" id="enviar" tabindex="10">Enviar</button>
+            </footer>
         </main>
     </div>
     
