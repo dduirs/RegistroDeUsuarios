@@ -76,14 +76,38 @@ password2.addEventListener('blur',()=>{
 // var formElement2 = document.getElementById("nombre").form;
 // formElement2.elements[1].setAttribute("style","color:red");
 
-var birthday = document.getElementById("cumpleanos");
+var nombre = document.getElementById("nombre");
 
+nombre.addEventListener('focusout',()=>{
+    if((/^\s{2}|[^a-zA-Z]/.test(nombre.value))){ // \s{2}|[^a-zA-Z]
+        console.log("No valido: "+nombre.value);
+        birthday.setCustomValidity("No valido");
+    }else{
+        birthday.setCustomValidity("");
+        console.log("Valido: "+nombre.value);
+    }
+});
+
+var birthday = document.getElementById("cumpleanos");
 
 // birthday.setCustomValidity("noCambiado");
 
 birthday.addEventListener('focusout',()=>{
-    birthday.setCustomValidity("");
+    if(!(birthday.value > new Date().getDate)){
+        birthday.setCustomValidity("");
+    }
+    else if((birthday.value - new Date().getDate) < 110){
+        birthday.setCustomValidity("");
+    }else{
+        birthday.setCustomValidity("No valido");
+    }
+
 });
+
+//TODO: check birthday validity is working;
+
+
+
 
 // document.getElementById('enviar').addEventListener('click', validar, false);
 
@@ -180,6 +204,31 @@ formSendBtn.addEventListener('click',()=>
     //     document.forms[0].requestSubmit(formSendBtn);
     // }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", () => {
+        // event.preventDefault();
+        const formData = new FormData(form);
+        console.log(formData);
+
+        // const formData = new FormData(form)
+        for (let item of formData) {
+            if(item[0] == "nombre" || item[0] == "correo" || item[0] == "contrasena"){
+                // console.log(item);
+                localStorage.setItem(item[0],item[1]);
+                //TODO: make items case insensitive
+                
+            }
+        }
+        console.log(localStorage.getItem("name"));
+        console.log(localStorage.getItem("correo"));
+        console.log(localStorage.getItem("contrasena"));
+    })
+})
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     birthday.setAttribute("value","1965-06-01");

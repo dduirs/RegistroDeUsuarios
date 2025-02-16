@@ -1,3 +1,190 @@
-#contrasena{
+body {
+    min-width: 350px;
+    /* padding-bottom: 30px; */
+    background-color: #00968891;
+    color: black;
+    font-weight: 500;
+    /* z-index: 5; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+    /* height: 500px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100vh;
+    /* margin-top: 3vh; */
+    z-index: 0;
+}
+
+form {
+    /* background: #3f0f95; */
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    /* font-size: smaller; */
+    /* margin-top: 37px; */
+    /* margin-bottom: 0px; */
+    /* padding-bottom: 30px; */
+    /* max-height: 90vh; */
+    width: 90%;
+    max-width: 430px;
+    min-width: 300px;
+    text-align: center;
+    padding: 20px;
+    /* padding-top: 105px; */
+    padding-bottom: 33px;
+    border-radius: 19px;
+    /* scroll-behavior: smooth; */
+    /* overflow-y: scroll; */
+    background-color: #ffffff91;
+    box-shadow: 0px 5px 30px -0px white;
+    z-index: 1;
+}
+
+form {
+    min-width: 80px;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+#contrasenaLogin {
+    opacity: 0;
+    z-index: 3;
+}
+
+/* #contrasenaLogin:hover, #contrasenaLogin:focus-within{
     opacity: 1;
+} */
+
+label {
+    display: block;
+    height: 28px;
+    /* padding-bottom: 5px; */
+    /* padding-top: 14px; */
+    margin-bottom: -19px;
+    /* margin-left: -15px; */
+}
+
+#revealPassword {
+    position: absolute;
+    background: transparent;
+    border: none;
+    scale: 110%;
+    margin-left: 367px;
+    margin-top: 181px;
+    cursor: pointer;
+    border-radius: 80px;
+    height: 25px;
+    width: 35px;
+    z-index: 3;
+}
+
+input:not([type=checkbox]) {
+    min-width: 80px;
+    width: 85%;
+    flex-shrink: 0;
+    margin-left: 30px;
+    height: 38px;
+    cursor: pointer;
+    display: block;
+    height: 27px;
+    /* width: 200px; */
+    /* padding-bottom: 4px; */
+    border: 2px solid transparent;
+    border-radius: 8px;
+    /* margin-bottom: 32px;
+    margin-top: 8px; */
+    text-indent: 15px;
+}
+
+input[type=checkbox] {
+    border: 1px solid black;
+    width: 22px;
+    height: 21px;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 3px;
+    color: white;
+    margin-left: 290px;
+    position: absolute;
+    margin-top: 233px;
+}
+
+input[type="checkbox"]:after {
+    content: ' ';
+    position: relative;
+    left: 35%;
+    top: 10%;
+    width: 20%;
+    height: 50%;
+    border: solid #000000;
+    border-width: 0 4px 4px 0;
+    transform: rotate(40deg);
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+input:not([type=date]):valid,
+select:valid {
+    background-color: rgb(26 136 26 / 14%);
+    outline: #45950f 1px solid;
+}
+
+input[type=checkbox]:checked {
+    background-color: rgb(255, 255, 255);
+}
+
+#recordarCuenta {
+    box-shadow: 1px 1px 1px 0px black;
+}
+
+#recordarCuentaLabel {
+    margin-left: -26px;
+}
+
+#recordarCuenta:hover,
+input:hover{
+    border: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#enviar {
+    /* width: 120px; */
+    color: white;
+    padding: 5px;
+    background-color: rgb(156, 42, 42, 0.993);
+    border-radius: 8px;
+    min-width: 80px;
+    width: 52%;
+    margin-top: 30px;
+    margin-left: 23%;
+    cursor: pointer;
+    z-index: 9;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 1px #000000a8;
+    font-size: medium;
+}
+
+#enviar:hover {
+    scale: 110%;
+    border: 2px solid white;
+    box-shadow: 0px 2px 15px 3px #000000a8;
+}
+
+footer {
+    justify-items: center;
+}
+
+address {
+    margin-top: 15%;
+    /* margin-bottom: 61px; */
+    padding-bottom: 20px;
 }

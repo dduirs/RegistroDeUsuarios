@@ -1,14 +1,13 @@
 body {
     min-width: 350px;
-    /* padding-bottom: 30px; */
     background-color: #00968891;
     color: black;
-    font-weight:500;
-    /* z-index: 5; */
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 main {
-    /* height: 500px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,60 +15,58 @@ main {
     flex-wrap: nowrap;
     height: 115vh;
     margin-top: 3vh;
-    /* padding-bottom: 30px; */
-    /* margin-bottom: 95px; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular',
-        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     z-index: 0;
 }
 
 form {
-    background: #3f0f95;
     display: flex;
     align-items: left;
     justify-content: left;
     flex-direction: row;
     font-size: smaller;
     margin-top: 50px;
-    /* margin-bottom: 0px; */
-    /* padding-bottom: 30px; */
-    /* max-height: 90vh; */
     width: 90%;
-    max-width: 420px;
+    max-width: 430px;
     min-width: 300px;
     text-align: center;
     padding: 20px;
-    padding-top: 100px;
+    padding-top: 105px;
     padding-bottom: 92px;
     border-radius: 19px;
-    /* scroll-behavior: smooth; */
-    /* overflow-y: scroll; */
-    background-color: #ffffffd6;
-    box-shadow: 0px 5px 100px -0px white;
+    background-color: white;
+    box-shadow: 0px 5px 30px -0px white;
     z-index: 1;
 }
 
 h2 {
     position: relative;
-    top: 120px;
+    top: 114px;
     align-self: center;
     margin: 5px;
-    /* justify-content: center; */
-    /* display: grid; */
     color: black;
     z-index: 2;
 }
 
-/* #labels,
-#inputs{
-    
-} */
+form::before{
+    content: " ";
+    border: 1px solid rgb(193, 191, 191);
+    z-index: 3;
+    height: 0px;
+    position: absolute;
+    margin-top: -559px;
+    align-self: center;
+    color: black;
+    z-index: 2;
+    margin-left: 14px;
+    width: 80%;
+    max-width: 400px;
+    min-width: 280px;
+}
 
 #inputs {
     min-width: 80px;
     flex-shrink: 0;
     margin-left: 30px;
-    /* margin-top: 0px; */
 }
 
 #labels {
@@ -77,7 +74,6 @@ h2 {
     margin-right: 3px;
     width: 39%;
     flex-shrink: 0;
-    /* margin-bottom: 10px; */
 }
 
 label {
@@ -88,9 +84,23 @@ label {
     margin-bottom: 19px;
 }
 
+#inputs input:not([type=checkbox]):focus,
+#inputs select:focus {
+    background-color: #a1f3ea57;
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs input:not([type=checkbox]):hover,
+#inputs select:hover {
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs select:hover {
+    border: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
 #inputs input:not([type=checkbox]),
 #inputs select {
-    /* font-size: small; */
     display: block;
     height: 27px;
     width: 200px;
@@ -100,71 +110,35 @@ label {
     margin-bottom: 32px;
     margin-top: 8px;
     text-indent: 15px;
-    /* font-size: medium; */
 }
+
 #inputs input:not([type=date]):valid,
 #inputs select:valid {
     background-color: rgb(26 136 26 / 14%);
-    outline: #45950f 3px solid;
+    outline: #45950f 1px solid;
 }
+
 #inputs input:invalid,
 #inputs select:invalid {
     background-color: #ffffff00;
-    outline: rgba(156, 42, 42, 0.993) 3px solid;
-    /* outline: rgba(93, 20, 20, 0.53) 3px solid; */
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
 }
 
-#cumpleanos{
+#cumpleanos {
     background-color: #ffffff00;
-    outline: rgba(156, 42, 42, 0.993) 3px solid;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
 }
 
 #inputs select {
     height: 32px;
     width: 202px;
-}
-
-
-
-/* #cumpleanos{
-    font-size: larger;
-} */
-
-/* label,
-input,
-select,
-button {
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-input{
-    height: 27px;
-}
-
-
-select{
-    height: 33px;
-}
-
-input,
-select,
-button {
-    border: 3px solid;
-    text-indent: 5px;
-}
-
-input:hover,
-select:hover,
-button:hover {
     cursor: pointer;
-    border: rgb(187, 0, 255) 3px solid;
-    /* border-color: rgb(187, 0, 255); */
-/* }
-input:focus-within:hover,
-select:focus-within:hover{
-    border: rgb(187, 0, 255) 3px solid;
-} */
+}
+
+#inputs select:open{
+    background: #a1f3ea57;
+}
+
 #contrasena2 {
     margin-top: -30px;
 }
@@ -178,37 +152,11 @@ select:focus-within:hover{
     z-index: 9;
     font-size: medium;
     width: 162px;
-    /* input-security: auto; */
     text-indent: 5px;
-    /* margin-left: 10px; */
 }
 
-/* #contrasena2:active, #contrasena2:focus-within{
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-} */
-
-
-/* #passwords>label {
-    margin-right: 10px;
-    margin-left: -40px;
-    position: relative;
-    left: -10px;
-} */
-
-/* #contrasena {
-    margin-left: 76px;
-} */
-
-/* #contrasena2 {
-    margin-left: -15px;
-    margin-bottom: 15px;
-} */
-
 #contrasena2:invalid:hover {
-    /* box-shadow: 0px 20px 1px 0px rgb(93 20 20 / 30%); */
-    /* border-color: rgb(93 20 20 / 53%); */
-    outline: rgba(156, 42, 42, 0.993) 3px solid;
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
 }
 
 #correo:valid,
@@ -216,28 +164,16 @@ select:focus-within:hover{
 #contrasena2:valid {
     background-color: rgba(26, 136, 26, 0.571);
     outline: #45950f 3px solid;
-    /* text-align: center; */
 }
 
 #correo:invalid,
 #contrasena:invalid,
 #contrasena2:invalid {
     background-color: #ff00002b;
-    outline: rgba(156, 42, 42, 0.993) 3px solid;
-}
-
-fieldset {
-    border: none;
-    margin: none;
-    padding: none;
-}
-
-#passwords>legend {
-    text-align: left;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
 }
 
 #passwordMismatchError {
-    /* margin: 4px; */
     margin-left: 5px;
     width: 135px;
     position: absolute;
@@ -245,81 +181,45 @@ fieldset {
     background-color: rgb(156, 42, 42, 0.993);
     display: block;
     opacity: 0;
-    /* position: relative; */
-    /* left: 0px; */
-    margin-top: -30px;
-    /* top: -26px; */
+    margin-top: -31px;
     padding-top: 6px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 6px;
-    /* margin-bottom: -11px; */
-    /* border-bottom-left-radius: 5px; */
-    /* border-bottom-right-radius: 5px; */
+    padding-bottom: 7px;
     z-index: 9;
 }
 
 #revealPassword {
-    /* margin-right: -5px; */
-    /* top: -50px; */
     position: absolute;
     background: transparent;
     border: none;
     scale: 110%;
     margin-left: 66px;
     margin-top: -60px;
+    cursor: pointer;
+    border-radius: 80px;
+    height: 25px;
+    width: 35px;
 }
 
-/* #cumpleanos {
-    margin-top: 5px;
-} */
-
-/* #pais {
-    width: 182px;
-    text-align: center;
+#inputs:has(#revealPassword:hover) #contrasena,
+#inputs:has(#revealPassword:hover) #contrasena2 {
+    background: rgba(0, 150, 136, 0.1);
 }
 
-#pais:focus-within {
-    width: 182px;
-    text-align: left;
-} */
-
-input[type=checkbox]{
-    /* background-color: blue; */
+input[type=checkbox] {
     width: 26px;
     height: 26px;
-    /* background: aquamarine; */
 }
-/* input[type=checkbox]:checked{
-    background-color: rgb(255, 0, 200);
-    width: 30px;
-    height: 30px;
-    background: rgb(255, 170, 127);
-} */
 
-input[type="checkbox"]:checked {
-    /* background: blue;
-    color: white; */
-    outline: #45950f 3px solid;
-  }
-  
-  input[type="checkbox"] {
-    /* cursor: pointer; */
-    /* -webkit-appearance: none; */
-    /* -moz-appearance: none; */
-    /* border: 1px solid black; */
+input[type="checkbox"] {
+    cursor: pointer;
     appearance: none;
-    
     border-radius: 3px;
-    background: lightgray;
-    /* height: 16px;
-    width: 16px; */
-    border: 1px solid white;
     color: white;
-  }
-  
-  input[type="checkbox"]:after {
-    /* border: 1px black solid; */
+}
+
+input[type="checkbox"]:after {
     content: ' ';
     position: relative;
     left: 35%;
@@ -330,19 +230,22 @@ input[type="checkbox"]:checked {
     border-width: 0 4px 4px 0;
     transform: rotate(40deg);
     display: none;
-  }
-  
-  input[type="checkbox"]:checked:after {
-    display: block;
-  }
+}
 
-#tyc{
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+#tyc {
     margin-left: -177px;
     margin-top: 9px;
-    /* border-radius: 8px; */
-    box-shadow: 0px 1px 1;
+    box-shadow: 1px 1px 1px 0px black;
     top: 0px;
     position: relative;
+}
+
+#tyc:hover {
+    border: rgba(156, 42, 42, 0.993) 2px solid;
 }
 
 #resetForm,
@@ -361,14 +264,20 @@ input[type="checkbox"]:checked {
 #formFooter {
     align-self: center;
     margin-top: -67px;
-    /* margin-bottom: 61px; */
-    /* padding-top: 50px; */
     z-index: 9;
 }
 
-#formFooter>button,
-#formFooter>input {
+#formFooter>*{
+    cursor: pointer;
     z-index: 9;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 1px #000000a8;
+}
+
+#formFooter>*:hover{
+    scale: 110%;
+    border: 2px solid white;
+    box-shadow: 0px 2px 15px 3px #000000a8;
 }
 
 footer {
@@ -377,13 +286,5 @@ footer {
 
 address {
     margin-top: 15%;
-    /* margin-bottom: 61px; */
     padding-bottom: 20px;
 }
-
-/* <select> element */
-
-/* You can also use the :open pseudo-class to style a <select> element when it is in the open state,
-    that is, when the drop-down options list is displayed. This doesn't apply to multi-line <select> elements 
-    (those with the multiple attribute set) — they tend to render as a scrolling list box rather than a
-    drop-down, so don't have an open state. */

@@ -15,12 +15,12 @@
     </form>
 </noscript>
 <body>
-    
     <div>
         <main>
-            <header><h2>Registrar usuario</h2></header>
+            <header>
+                <h2>Registrar usuario</h2>
+            </header>
             <form id="registro" action="Login.html" method="POST" target="_parent">
-                 
                 <div id="labels">
                     <label for="nombre">Nombre:</label>
 
@@ -39,16 +39,14 @@
                     <label for="tyc">Acepto los términos y condiciones:</label>
                 </div>
                 <div id="inputs">
-                    <input type="text" id="nombre" class="nombres incompleto" name="nombre" placeholder=" "
-                    autocomplete="given-name" required="required" autocapitalize="words" tabindex="1" autofocus> 
-                    <!-- TODO: check tabindex & classes -->
+                    <input type="text" id="nombre" name="nombre" placeholder=" "
+                    autocomplete="given-name" required="required" autocapitalize="words" minlength="9" tabindex="1" 
+                    autofocus pattern="/([a-zA-Z]{2,20}[\s{2,}]){3}/">
                      
-                    <input type="email" id="correo" class="incompleto" name="correo" placeholder="ejemplo@correo.es"
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
                         autocomplete="email" required="required" title="Escribe un correo electrónico valido"
                         tabindex="2" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
-                        <!-- TODO: validate email --> <!-- TODO: check tabindex & classes & title-->
                       
-                    <!-- <legend>Crear contraseña: </legend> -->
                     <input type="password" id="contrasena" name="contrasena" required="required" minlength="8"
                     tabindex="3" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
                     <button type="button" id="revealPassword">
@@ -64,24 +62,18 @@
                     <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8"
                     tabindex="4" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
 
-                    
-                     
                     <!-- TODO: make sure default values are not unchanged, or changed back to -->
-                    <input id="cumpleanos" class="" name="cumpleanos" type="date" required="required" tabindex="5" placeholder="">  
+                    <input id="cumpleanos" name="cumpleanos" type="date" required="required" tabindex="5" placeholder="">  
                     
-                     
-                    <select id="genero" class="nombres" name="genero" required="required" tabindex="6">
+                    <select id="genero" name="genero" required="required" tabindex="6">
                         <option value=""></option>
                         <option value="femenino">Femenino</option>
                         <option value="masculino">Masculino</option>
                         <option value="otro">Otro</option>
                         <option value="noContesta">Prefiero no contestar</option>
                     </select>
-                    <!-- TODO: check tabindex & classes -->
                      
-                    <!-- TODO: check class -->
-                    <select id="pais" class="dropDown incompleto" name="pais" required="required" tabindex="7">
-                        <!-- TODO: check tabindex & classes -->
+                    <select id="pais" name="pais" required="required" tabindex="7">
                         <option value="" label="Seleccione un país" selected="selected">Seleccione un país</option>
                         <optgroup id="optgroup-Europe" label="Europa">
                             <option value="AL" label="Albania">Albania</option>
@@ -115,7 +107,7 @@
                             <option value="LU" label="Luxemburgo">Luxemburgo</option>
                             <option value="MK" label="Macedonia">Macedonia</option>
                             <option value="MT" label="Malta">Malta</option>
-                            <option value="FX" label="Francia metropolitana">Francia metropolitana</option>
+                            <option value="FX" label="Francia">Francia</option>
                             <option value="MD" label="Moldavia">Moldavia</option>
                             <option value="MC" label="Mónaco">Mónaco</option>
                             <option value="ME" label="Montenegro">Montenegro</option>
@@ -131,13 +123,11 @@
                             <option value="SK" label="Eslovaquia">Eslovaquia</option>
                             <option value="SI" label="Eslovenia">Eslovenia</option>
                             <option value="ES" label="España">España</option>
-                            <option value="SJ" label="Svalbard y Jan Mayen">Svalbard y Jan Mayen</option>
                             <option value="SE" label="Suecia">Suecia</option>
                             <option value="CH" label="Suiza">Suiza</option>
                             <option value="UA" label="Ucrania">Ucrania</option>
                             <option value="GB" label="Reino Unido">Reino Unido</option>
                             <option value="VA" label="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                            <option value="AX" label="Islas Åland">Islas Åland</option>
                         </optgroup>
                         <optgroup id="optgroup-Africa" label="Africa">
                             <option value="DZ" label="Algeria">Argelia</option>
@@ -234,7 +224,6 @@
                             <option value="MQ" label="Martinica">Martinica</option>
                             <option value="MX" label="México">México</option>
                             <option value="MS" label="Montserrat">Montserrat</option>
-                            <option value="AN" label="Antillas Neerlandesas">Antillas Neerlandesas</option>
                             <option value="NI" label="Nicaragua">Nicaragua</option>
                             <option value="PA" label="Panamá">Panamá</option>
                             <option value="PY" label="Paraguay">Paraguay</option>
@@ -347,13 +336,8 @@
                             <option value="WF" label="Wallis y Futuna">Wallis y Futuna</option>
                         </optgroup>
                     </select>
-                    <!-- TODO: pon un comentario para presione la tecla de la primera letra del pais,
-                    o mas veces para encontrar su pais -->
 
                     <input id="tyc" type="checkbox" name="tyc" required="required" tabindex="8">
-                     
-                    <!-- <input form="formCV" id="submitButton" type="submit" value="Enviar"> -->
-                    <!-- TODO: what's better here ^ for submit, a button or an input? -->
                 </div>
             </form>
             <footer id="formFooter">
@@ -363,7 +347,7 @@
         </main>
     </div>
     
-    <footer>
+    <!-- <footer>
         <address>
             <span id="crYear">&copy;</span>
             David D
@@ -372,6 +356,18 @@
                     target="_blank">Email</a></span>
         </address>
         
+    </footer> -->
+    <footer>
+        <address>
+            <span>&copy;</span>
+            David D
+            <span><a href="https://github.com/dduirs" target="_blank">GitHub</a></span>
+            <span><a href="mailto:224G3584@live.uem.es?subject=Oferta de trabajo&body=Hola, David:%0D%0DEnhorabuena por"
+                    target="_blank">Email</a></span>
+        </address>
+        <div id="toTop">
+            <a href="FormularioRegistro.html#">Ir al principio</a>
+        </div>
     </footer>
     <script src="validacion.js" defer="defer"></script>
 </body>
