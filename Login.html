@@ -6,21 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <base href="./" target="_parent">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleLogin.css">
 </head>
 
 <noscript>
-    <header>Tu navegador no soporta JavaScript</header>
-    <form>
-    </form>
+    <header>Tu navegador no es compatible con JavaScript</header>
 </noscript>
 <body>
     
     <div>
         <main>
-                <header><h3>Log in</h3></header>
+            <form id="login" action="inicio.html" method="POST" target="_parent">
+                
+                <header><h3>Iniciar sesión</h3></header>
 
+                <label id="correoLabel" for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
+                    autocomplete="email" required="required" title="Escribe un correo electrónico valido"
+                    tabindex="1" autofocus pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
+
+                <label id="passwordLoginLabel" for="contrasenaLogin" style="opacity:0">Contraseña:</label>
+                <input type="password" id="contrasenaLogin" name="contrasenaLogin" placeholder="contraseña" required="required" minlength="8"
+                    tabindex="2" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+                <button type="button" id="revealPassword">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+                            5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
+                        </path>
+                    </svg>
+                </button>
+
+                <input id="recordarCuenta" type="checkbox" name="recordarCuenta" tabindex="3">
+                <label for="recordarCuenta" id="recordarCuentaLabel">Recordar mi cuenta</label>
+                
+                <!-- <input type="submit" id="enviar" value="Iniciar sesión"> -->
+                <button form="login" type="button" id="enviar" tabindex="4">Iniciar sesión</button>
 
         </main>
     </div>
+    <footer>
+        <address>
+            <span>&copy;</span>
+            David D
+            <span><a href="https://github.com/dduirs" target="_blank">GitHub</a></span>
+            <span><a href="mailto:224G3584@live.uem.es?subject=Oferta de trabajo&body=Hola, David:%0D%0DEnhorabuena por"
+                    target="_blank">Email</a></span>
+        </address>
+        <div id="toTop">
+            <a href="FormularioRegistro.html#">Ir al principio</a>
+        </div>
+    </footer>
+    <script src="login.js" defer="defer"></script>
 </body>

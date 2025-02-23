@@ -1,65 +1,290 @@
-main{
+body {
+    min-width: 350px;
+    background-color: #00968891;
+    color: black;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: 80vh;
+    flex-wrap: nowrap;
+    height: 115vh;
+    margin-top: 3vh;
+    z-index: 0;
 }
 
-form{
-    height: auto;
+form {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    font-size: smaller;
+    margin-top: 50px;
     width: 90%;
-    max-width: 400px;
+    max-width: 430px;
+    min-width: 300px;
     text-align: center;
     padding: 20px;
-    border-radius: 8px;
-    /* scroll-behavior: smooth; */
-    /* overflow-y: scroll; */
-    background-color: #ff7f7f26;
-    box-shadow: 0px 5px 5px -5px black;
+    padding-top: 105px;
+    padding-bottom: 92px;
+    border-radius: 19px;
+    background-color: white;
+    box-shadow: 0px 5px 30px -0px white;
+    z-index: 1;
 }
 
-h3{
-    margin: 5px;
-}
-
-
-form>label,input,select{
-    margin-bottom: 20px;
-    border-radius: 3px;
-}
-
-input,select{
-    border: black 3px solid;
-}
-
-input:hover,select:hover{
-    cursor: pointer;
-    border-color: yellow;
-}
-
-#correo:valid,#contrasena:valid,#contrasena2:valid{
-    background-color: rgba(26, 136, 26, 0.571);
-}
-#correo:invalid,#contrasena:invalid,#contrasena2:invalid{
-    background-color: #ff00002b;
-}
-
-#passwords>legend{
-    text-align: left;
-}
-
-#passwordMismatchError{
-    margin: 4px;
-    color: white;
-    background-color: rgba(93, 20, 20, 0.858);
-    opacity: 0;
+h2 {
     position: relative;
-    left: 74px;
-    top: -20px;
-    padding-left: 20px;
+    top: 114px;
+    align-self: center;
+    margin: 5px;
+    color: black;
+    z-index: 2;
+}
+
+form::before{
+    content: " ";
+    border: 1px solid rgb(193, 191, 191);
+    z-index: 3;
+    height: 0px;
+    position: absolute;
+    margin-top: -559px;
+    align-self: center;
+    color: black;
+    z-index: 2;
+    margin-left: 14px;
+    width: 80%;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+#inputs {
+    min-width: 80px;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+#labels {
+    text-align: right;
+    margin-right: 3px;
+    width: 39%;
+    flex-shrink: 0;
+}
+
+label {
+    display: block;
+    height: 26px;
+    padding-bottom: 5px;
+    padding-top: 14px;
+    margin-bottom: 19px;
+}
+
+#inputs input:not([type=checkbox]):focus,
+#inputs select:focus {
+    background-color: #a1f3ea57;
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs input:not([type=checkbox]):hover,
+#inputs select:hover {
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs select:hover {
+    border: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#inputs input:not([type=checkbox]),
+#inputs select {
+    display: block;
+    height: 27px;
+    width: 200px;
+    padding-bottom: 4px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    margin-top: 8px;
+    text-indent: 15px;
+}
+
+#inputs input:not([type=date]):valid,
+#inputs select:valid {
+    background-color: rgb(26 136 26 / 14%);
+    outline: #45950f 1px solid;
+}
+
+#inputs input:invalid,
+#inputs select:invalid {
+    background-color: #ffffff00;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#cumpleanos {
+    background-color: #ffffff00;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#inputs select {
+    height: 32px;
+    width: 202px;
+    cursor: pointer;
+}
+
+#inputs select:open{
+    background: #a1f3ea57;
+}
+
+#contrasena2 {
+    margin-top: -30px;
+}
+
+#cumpleanos {
+    margin-top: -13px;
+}
+
+#contrasena,
+#contrasena2 {
+    z-index: 9;
+    font-size: medium;
+    width: 162px;
+    text-indent: 5px;
+}
+
+#contrasena2:invalid:hover {
+    outline: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#correo:valid,
+#contrasena:valid,
+#contrasena2:valid {
+    background-color: rgba(26, 136, 26, 0.571);
+    outline: #45950f 3px solid;
+}
+
+#correo:invalid,
+#contrasena:invalid,
+#contrasena2:invalid {
+    background-color: #ff00002b;
+    outline: rgba(156, 42, 42, 0.993) 1px solid;
+}
+
+#passwordMismatchError {
+    margin-left: 5px;
+    width: 135px;
+    position: absolute;
+    color: white;
+    background-color: rgb(156, 42, 42, 0.993);
+    display: block;
+    opacity: 0;
+    margin-top: -31px;
+    padding-top: 6px;
+    padding-left: 30px;
     padding-right: 30px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding-bottom: 7px;
+    z-index: 9;
+}
+
+#revealPassword {
+    position: absolute;
+    background: transparent;
+    border: none;
+    scale: 110%;
+    margin-left: 66px;
+    margin-top: -60px;
+    cursor: pointer;
+    border-radius: 80px;
+    height: 25px;
+    width: 35px;
+}
+
+#inputs:has(#revealPassword:hover) #contrasena,
+#inputs:has(#revealPassword:hover) #contrasena2 {
+    background: rgba(0, 150, 136, 0.1);
+}
+
+input[type=checkbox] {
+    width: 26px;
+    height: 26px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    border-radius: 3px;
+    color: white;
+}
+
+input[type="checkbox"]:after {
+    content: ' ';
+    position: relative;
+    left: 35%;
+    top: 10%;
+    width: 20%;
+    height: 50%;
+    border: solid #000000;
+    border-width: 0 4px 4px 0;
+    transform: rotate(40deg);
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+#tyc {
+    margin-left: -177px;
+    margin-top: 9px;
+    box-shadow: 1px 1px 1px 0px black;
+    top: 0px;
+    position: relative;
+}
+
+#tyc:hover {
+    border: rgba(156, 42, 42, 0.993) 2px solid;
+}
+
+#resetForm,
+#enviar {
+    width: 120px;
+    color: white;
+    padding: 5px;
+    background-color: rgb(156, 42, 42, 0.993);
+    border-radius: 8px;
+}
+
+#resetForm {
+    margin-right: 20px;
+}
+
+#formFooter {
+    align-self: center;
+    margin-top: -67px;
+    z-index: 9;
+}
+
+#formFooter>*{
+    cursor: pointer;
+    z-index: 9;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px 1px #000000a8;
+}
+
+#formFooter>*:hover{
+    scale: 110%;
+    border: 2px solid white;
+    box-shadow: 0px 2px 15px 3px #000000a8;
+}
+
+footer{
+    justify-items: center;
+}
+
+address {
+    margin-top: 15%;
+    padding-bottom: 20px;
 }

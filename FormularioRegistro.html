@@ -15,57 +15,72 @@
     </form>
 </noscript>
 <body>
-    
     <div>
         <main>
-            <form action="Login.html" method="POST" target="_blank">
-                <header><h3>Registrar usuario</h3></header>
-                <br>
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" class="nombres incompleto" name="nombre" placeholder=" "
-                autocomplete="given-name" required="required" autocapitalize="words" tabindex="10" autofocus> 
-                <!-- TODO: check tabindex & classes -->
-                 <br>
-                <label for="correo">Correo electrónico:</label> 
-                <input type="email" id="correo" class="incompleto" name="correo" placeholder="ejemplo@correo.es"
-                    autocomplete="email" required="required" title="Escribe un correo electrónico valido"
-                    tabindex="1" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
-                    <!-- TODO: validate email --> <!-- TODO: check tabindex & classes & title-->
-                    <br><br>
-                    <fieldset id="passwords"> 
-                        <legend>Crear contraseña</legend>
-                        <input type="password" id="contrasena" name="contrasena" required="required" minlength="8"
-                        pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
-                        <button id="revealPassword">Ver</button>
-                        <br>
-                        <label for="contrasena2">Confirmar contraseña:</label>
-                        <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8"
-                        pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
-                        <span id="passwordMismatchError"></span>
-                    </fieldset>
-                
-                <br>
-                <!-- TODO: make sure default values are not unchanged, or changed back to -->
-                <label for="cumpleanos">Fecha de nacimiento:</label>
-                <input id="cumpleanos" class="" name="cumpleanos" type="date" required="required placeholder="01/06/2010">  
-                
-                <br>
-                <label for="genero" placeholder=" ">Genero:</label>
-                <select id="genero" class="nombres" name="genero" required="required" tabindex="6">
-                    <option value="otro">Otro</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="noContesta">Prefiero no contestar</option>
-                </select>
-                <!-- TODO: check tabindex & classes -->
-                
-                <br>
-                <label for="pais">País de residencia:</label>
-                <div class="otherInput">
-                     <!-- TODO: check class -->
-                    <select id="pais" class="dropDown incompleto" name="pais" required="required" tabindex="13">
-                        <!-- TODO: check tabindex & classes -->
-                        <option value="0" label="Seleccione un país" selected="selected">Seleccione un país</option>
+            <header>
+                <h2>Registrar usuario</h2>
+            </header>
+            <form id="registro" action="Login.html" method="POST" target="_parent">
+                <div id="labels">
+                    <label for="nombre">Nombre:</label>
+
+                    <label for="correo">Correo electrónico:</label> 
+                    
+                    <label for="contrasena">Contraseña:</label>
+
+                    <label for="contrasena2">Confirmar contraseña:</label>
+                     
+                    <label for="cumpleanos">Fecha de nacimiento:</label>
+                     
+                    <label for="genero">Género:</label>
+                     
+                    <label for="pais">País de residencia:</label>
+                     
+                    <label for="tyc">Acepto los términos y condiciones:</label>
+                </div>
+                <div id="inputs">
+                    <input type="text" id="nombre" name="nombre" placeholder=" "
+                    autocomplete="given-name" required="required" autocapitalize="words" title="Escribe tu nombre completo" minlength="9" tabindex="1" 
+                    autofocus pattern="/([a-zA-Z]{2,20}[\s{2,}]){3}/">
+                     
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
+                        autocomplete="email" required="required" title="Escribe un correo electrónico válido"
+                        tabindex="2" pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
+                      
+                    <input type="password" id="contrasena" name="contrasena" required="required" title="La contraseña debe contener al menos 8 caracteres, con al menos 
+uno de cada uno de los siguientes cuatro grupos de caracteres:
+
+            Mayúsculas: A a Z
+            Minúsculas: a a z
+            Numéricos: 0 a 9
+            Caracteres especiales: !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" minlength="8" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
+                    tabindex="3">
+                    <button type="button" id="revealPassword">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4Zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24
+                                5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="black">
+                            </path>
+                        </svg>
+                    </button>
+                    
+                    <span id="passwordMismatchError"></span>
+                     
+                    <input type="password" id="contrasena2" name="contrasena2" required="required" minlength="8" title="Las contraseñas deben ser iguales" 
+                    tabindex="4" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+
+                    <!-- TODO: make sure default values are not unchanged, or changed back to -->
+                    <input id="cumpleanos" name="cumpleanos" type="date" required="required" tabindex="5" placeholder="">  
+                    
+                    <select id="genero" name="genero" required="required" tabindex="6" title="Indica tu género">
+                        <option value=""></option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="otro">Otro</option>
+                        <option value="noContesta">Prefiero no contestar</option>
+                    </select>
+                     
+                    <select id="pais" name="pais" required="required" tabindex="7" title="Selecciona tu país por continente">
+                        <option value="" label="Selecciona un país" selected="selected">Selecciona un país</option>
                         <optgroup id="optgroup-Europe" label="Europa">
                             <option value="AL" label="Albania">Albania</option>
                             <option value="AD" label="Andorra">Andorra</option>
@@ -78,7 +93,6 @@
                             <option value="CY" label="Chipre">Chipre</option>
                             <option value="CZ" label="República Checa">República Checa</option>
                             <option value="DK" label="Dinamarca">Dinamarca</option>
-                            <option value="DD" label="Alemania del Este">Alemania del Este</option>
                             <option value="EE" label="Estonia">Estonia</option>
                             <option value="FO" label="Islas Feroe">Islas Feroe</option>
                             <option value="FI" label="Finlandia">Finlandia</option>
@@ -99,7 +113,7 @@
                             <option value="LU" label="Luxemburgo">Luxemburgo</option>
                             <option value="MK" label="Macedonia">Macedonia</option>
                             <option value="MT" label="Malta">Malta</option>
-                            <option value="FX" label="Francia metropolitana">Francia metropolitana</option>
+                            <option value="FX" label="Francia">Francia</option>
                             <option value="MD" label="Moldavia">Moldavia</option>
                             <option value="MC" label="Mónaco">Mónaco</option>
                             <option value="ME" label="Montenegro">Montenegro</option>
@@ -115,14 +129,11 @@
                             <option value="SK" label="Eslovaquia">Eslovaquia</option>
                             <option value="SI" label="Eslovenia">Eslovenia</option>
                             <option value="ES" label="España">España</option>
-                            <option value="SJ" label="Svalbard y Jan Mayen">Svalbard y Jan Mayen</option>
                             <option value="SE" label="Suecia">Suecia</option>
                             <option value="CH" label="Suiza">Suiza</option>
                             <option value="UA" label="Ucrania">Ucrania</option>
-                            <option value="SU" label="Unión de Repúblicas Socialistas Soviéticas">Unión de Repúblicas Socialistas Soviéticas</option>
                             <option value="GB" label="Reino Unido">Reino Unido</option>
                             <option value="VA" label="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                            <option value="AX" label="Islas Åland">Islas Åland</option>
                         </optgroup>
                         <optgroup id="optgroup-Africa" label="Africa">
                             <option value="DZ" label="Algeria">Argelia</option>
@@ -158,21 +169,22 @@
                             <option value="ML" label="Mali">Mali</option>
                             <option value="MR" label="Mauritania">Mauritania</option>
                             <option value="MU" label="Mauricio">Mauricio</option>
-                            <option value="YT" label="Mayotte">Mayotte</option>
+                            <option value="YT" label="Mayotte (FR)">Mayotte (FR)</option>
                             <option value="MA" label="Marruecos">Marruecos</option>
                             <option value="MZ" label="Mozambique">Mozambique</option>
                             <option value="NA" label="Namibia">Namibia</option>
                             <option value="NE" label="Níger">Níger</option>
                             <option value="NG" label="Nigeria">Nigeria</option>
                             <option value="RW" label="Ruanda">Ruanda</option>
-                            <option value="RE" label="Reunión">Reunión</option>
-                            <option value="SH" label="Santa Elena">Santa Elena</option>
+                            <option value="RE" label="Reunión (FR)">Reunión (FR)</option>
+                            <option value="SH" label="Santa Elena (UK)">Santa Elena (UK)</option>
                             <option value="SN" label="Senegal">Senegal</option>
                             <option value="SC" label="Seychelles">Seychelles</option>
                             <option value="SL" label="Sierra Leona">Sierra Leona</option>
                             <option value="SO" label="Somalia">Somalia</option>
                             <option value="ZA" label="Sudáfrica">Sudáfrica</option>
                             <option value="SD" label="Sudán">Sudán</option>
+                            <option value="SD" label="Sudán del Sur">Sudán del Sur</option>
                             <option value="SZ" label="Suazilandia">Suazilandia</option>
                             <option value="ST" label="Santo Tomé y Príncipe">Santo Tomé y Príncipe</option>
                             <option value="TZ" label="Tanzania">Tanzania</option>
@@ -218,7 +230,6 @@
                             <option value="MQ" label="Martinica">Martinica</option>
                             <option value="MX" label="México">México</option>
                             <option value="MS" label="Montserrat">Montserrat</option>
-                            <option value="AN" label="Antillas Neerlandesas">Antillas Neerlandesas</option>
                             <option value="NI" label="Nicaragua">Nicaragua</option>
                             <option value="PA" label="Panamá">Panamá</option>
                             <option value="PY" label="Paraguay">Paraguay</option>
@@ -233,7 +244,7 @@
                             <option value="SR" label="Surinam">Surinam</option>
                             <option value="TT" label="Trinidad y Tobago">Trinidad y Tobago</option>
                             <option value="TC" label="Islas Turcas y Caicos">Islas Turcas y Caicos Islas</option>
-                            <option value="VI" label="EE.UU. Islas Vírgenes de los Estados Unidos">Islas Vírgenes de los Estados Unidos</option>
+                            <option value="VI" label="EE.UU. Islas Vírgenes">Islas Vírgenes</option>
                             <option value="US" label="Estados Unidos">Estados Unidos</option>
                             <option value="UY" label="Uruguay">Uruguay</option>
                             <option value="VE" label="Venezuela">Venezuela</option>
@@ -250,7 +261,7 @@
                             <option value="CN" label="China">China</option>
                             <option value="CY" label="Chipre">Chipre</option>
                             <option value="GE" label="Georgia">Georgia</option>
-                            <option value="HK" label="RAE de Hong Kong (China)">RAE de Hong Kong (China)</option>
+                            <option value="HK" label="RAE de Hong Kong">RAE de Hong Kong</option>
                             <option value="IN" label="India">India</option>
                             <option value="ID" label="Indonesia">Indonesia</option>
                             <option value="IR" label="Irán">Irán</option>
@@ -263,18 +274,18 @@
                             <option value="KG" label="Kirguistán">Kirguistán</option>
                             <option value="LA" label="Laos">Laos</option>
                             <option value="LB" label="Líbano">Líbano</option>
-                            <option value="MO" label="RAE de Macao (China)">RAE de Macao (China)</option>
+                            <option value="MO" label="RAE de Macao">RAE de Macao</option>
                             <option value="MY" label="Malasia">Malasia</option>
                             <option value="MV" label="Maldivas">Maldivas</option>
                             <option value="MN" label="Mongolia">Mongolia</option>
-                            <option value="MM" label="Myanmar [Birmania]">Myanmar [Birmania]</option>
+                            <option value="MM" label="Myanmar">Myanmar</option>
                             <option value="NP" label="Nepal">Nepal</option>
                             <option value="NT" label="Zona Neutral">Zona Neutral</option>
                             <option value="KP" label="Corea del Norte">Corea del Norte</option>
                             <option value="OM" label="Omán">Omán</option>
                             <option value="PK" label="Pakistán">Pakistán</option>
                             <option value="PS" label="Territorios Palestinos">Territorios Palestinos</option>
-                            <option value="YD" label="República Democrática Popular del Yemen">República Democrática Popular del Yemen</option>
+                            <option value="YD" label="Yemen">Yemen</option>
                             <option value="PH" label="Filipinas">Filipinas</option>
                             <option value="QA" label="Qatar">Qatar</option>
                             <option value="RU" label="Rusia">Rusia</option>
@@ -299,7 +310,7 @@
                             <option value="AQ" label="Antártida">Antártida</option>
                             <option value="AU" label="Australia">Australia</option>
                             <option value="BV" label="Isla Bouvet">Isla Bouvet</option>
-                            <option value="IO" label="Territorio Británico del Océano Índico">Territorio Británico del Océano Índico</option>
+                            <option value="IO" label="Territorio del Océano Índico (UK)">Territorio del Océano Índico (UK)</option>
                             <option value="CX" label="Isla de Navidad">Isla de Navidad</option>
                             <option value="CC" label="Islas Cocos">Islas Cocos</option>
                             <option value="CK" label="Islas Cook">Islas Cook</option>
@@ -307,7 +318,7 @@
                             <option value="PF" label="Polinesia Francesa">Polinesia Francesa</option>
                             <option value="TF" label="Territorios Australes Franceses">Territorios Australes Franceses</option>
                             <option value="GU" label="Guam">Guam</option>
-                            <option value="HM" label="Islas Heard y McDonald">Islas Heard Islas Marshall e Islas McDonald</option>
+                            <option value="HM" label="Islas Heard y McDonald">Islas Heard, Marshall e McDonald</option>
                             <option value="KI" label="Kiribati">Kiribati</option>
                             <option value="MH" label="Islas Marshall">Islas Marshall</option>
                             <option value="FM" label="Micronesia">Micronesia</option>
@@ -322,34 +333,27 @@
                             <option value="PN" label="Islas Pitcairn">Islas Pitcairn</option>
                             <option value="WS" label="Samoa">Samoa</option>
                             <option value="SB" label="Islas Salomón">Islas Salomón</option>
-                            <option value="GS" label="Islas Georgias del Sur y Sandwich del Sur">Islas Georgias del Sur y Sandwich del Sur</option>
+                            <option value="GS" label="Islas Georgias y Sandwich del Sur">Islas Georgias y Sandwich del Sur</option>
                             <option value="TK" label="Tokelau">Tokelau</option>
                             <option value="TO" label="Tonga">Tonga</option>
                             <option value="TV"label="Tuvalu">Tuvalu</option>
-                            <option value="UM" label="Islas menores alejadas de los Estados Unidos">Islas menores alejadas de los Estados Unidos</option>
+                            <option value="UM" label="EE.UU. Islas menores alejadas">Islas menores alejadas</option>
                             <option value="VU" label="Vanuatu">Vanuatu</option>
                             <option value="WF" label="Wallis y Futuna">Wallis y Futuna</option>
                         </optgroup>
                     </select>
-                    <!-- TODO: pon un comentario para presione la tecla de la primera letra del pais,
-                    o mas veces para encontrar su pais -->
+
+                    <input id="tyc" type="checkbox" name="tyc" required="required" tabindex="8" title="Marca la casilla para aceptarlos">
                 </div>
-
-                <input id="tyc" type="checkbox" name="tyc" required="required">
-                <label for="tyc">Acepto los términos y condiciones</label>
-                <br>
-
-                <!-- <input form="formCV" id="submitButton" type="submit" value="Enviar"> -->
-                <button type="submit" id="enviar">Enviar formulario</button>
-                <!-- TODO: what's better here ^ for submit, a button or an input? -->
-                
-                <input form="formCV" type="reset" id="resetForm" value="Restablecer formulario">
-
             </form>
+            <footer id="formFooter">
+                <input form="registro" type="button" id="resetForm" value="Restablecer" tabindex="9">
+                <button form="registro" type="submit" id="enviar" tabindex="10">Enviar</button>
+            </footer>
         </main>
     </div>
     
-    <footer>
+    <!-- <footer>
         <address>
             <span id="crYear">&copy;</span>
             David D
@@ -358,6 +362,18 @@
                     target="_blank">Email</a></span>
         </address>
         
+    </footer> -->
+    <footer>
+        <address>
+            <span>&copy;</span>
+            David D
+            <span><a href="https://github.com/dduirs" target="_blank">GitHub</a></span>
+            <span><a href="mailto:224G3584@live.uem.es?subject=Oferta de trabajo&body=Hola, David:%0D%0DEnhorabuena por"
+                    target="_blank">Email</a></span>
+        </address>
+        <div id="toTop">
+            <a href="FormularioRegistro.html#">Ir al principio</a>
+        </div>
     </footer>
     <script src="validacion.js" defer="defer"></script>
 </body>
