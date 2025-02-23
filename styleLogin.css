@@ -10,14 +10,12 @@ body {
 }
 
 main {
-    /* height: 500px; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
     height: 100vh;
-    /* margin-top: 3vh; */
     z-index: 0;
 }
 
@@ -27,30 +25,22 @@ form {
     align-items: left;
     justify-content: left;
     flex-direction: column;
-    /* font-size: smaller; */
-    /* margin-top: 37px; */
-    /* margin-bottom: 0px; */
-    /* padding-bottom: 30px; */
-    /* max-height: 90vh; */
     width: 90%;
     max-width: 430px;
-    min-width: 300px;
+    /* min-width: 300px; */
     text-align: center;
-    padding: 20px;
-    /* padding-top: 105px; */
-    padding-bottom: 33px;
     border-radius: 19px;
-    /* scroll-behavior: smooth; */
-    /* overflow-y: scroll; */
     background-color: #ffffff91;
     box-shadow: 0px 5px 30px -0px white;
     z-index: 1;
-}
-
-form {
     min-width: 80px;
     flex-shrink: 0;
     margin-left: 30px;
+    height: 353px;
+}
+
+h3{
+    margin-top: 50px;
 }
 
 #contrasenaLogin {
@@ -58,17 +48,14 @@ form {
     z-index: 3;
 }
 
-/* #contrasenaLogin:hover, #contrasenaLogin:focus-within{
-    opacity: 1;
-} */
+#passwordLoginLabel{
+    margin-top: 10px;
+}
 
 label {
     display: block;
     height: 28px;
-    /* padding-bottom: 5px; */
-    /* padding-top: 14px; */
-    margin-bottom: -19px;
-    /* margin-left: -15px; */
+    margin-top: 10px;
 }
 
 #revealPassword {
@@ -77,12 +64,12 @@ label {
     border: none;
     scale: 110%;
     margin-left: 367px;
-    margin-top: 181px;
     cursor: pointer;
     border-radius: 80px;
     height: 25px;
     width: 35px;
     z-index: 3;
+    margin-top: 205px;
 }
 
 input:not([type=checkbox]) {
@@ -94,12 +81,8 @@ input:not([type=checkbox]) {
     cursor: pointer;
     display: block;
     height: 27px;
-    /* width: 200px; */
-    /* padding-bottom: 4px; */
     border: 2px solid transparent;
     border-radius: 8px;
-    /* margin-bottom: 32px;
-    margin-top: 8px; */
     text-indent: 15px;
 }
 
@@ -113,7 +96,7 @@ input[type=checkbox] {
     color: white;
     margin-left: 290px;
     position: absolute;
-    margin-top: 233px;
+    margin-top: 255px;
 }
 
 input[type="checkbox"]:after {
@@ -149,6 +132,7 @@ input[type=checkbox]:checked {
 
 #recordarCuentaLabel {
     margin-left: -26px;
+    margin-top: 20px;
 }
 
 #recordarCuenta:hover,
@@ -164,7 +148,7 @@ input:hover{
     border-radius: 8px;
     min-width: 80px;
     width: 52%;
-    margin-top: 30px;
+    margin-top: 23px;
     margin-left: 23%;
     cursor: pointer;
     z-index: 9;

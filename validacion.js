@@ -50,13 +50,13 @@ passwordView.addEventListener('click',()=>{
 
 password2.addEventListener('blur',()=>{
     const errorPassword = document.getElementById("passwordMismatchError");
-    errorPassword.textContent = "Password different";
+    errorPassword.textContent = "No coinciden";
      if(password2.value != password.value){
         password2.setAttribute('isvalid','false');
         // password2.setAttribute('invalid','true');
         password2.setCustomValidity("password mismatch");
         if(password2.getAttribute('isvalid') == 'false'){
-            alert("Password mismatch!");
+            alert("Las contraseñas no coinciden");
             errorPassword.setAttribute("style","opacity:1")
             if(password2.getAttribute("type") == 'password'){
                 ensenarContrasenar();
@@ -80,11 +80,11 @@ var nombre = document.getElementById("nombre");
 
 nombre.addEventListener('focusout',()=>{
     if((/^\s{2}|[^a-zA-Z]/.test(nombre.value))){ // \s{2}|[^a-zA-Z]
-        console.log("No valido: "+nombre.value);
-        birthday.setCustomValidity("No valido");
+        console.log("No válido: "+nombre.value);
+        birthday.setCustomValidity("No válido");
     }else{
         birthday.setCustomValidity("");
-        console.log("Valido: "+nombre.value);
+        console.log("válido: "+nombre.value);
     }
 });
 
@@ -168,7 +168,7 @@ birthday.addEventListener('focusout',()=>{
 // Aa1234!2
 
 resetBtn.addEventListener('click', ()=>{
-    if(confirm("¿Estas seguro que quieres borrar todo?")){
+    if(confirm("¿Seguro que quieres borrar todo?")){
         resetBtn.setAttribute("type","reset");
         alert("formulario vaciado");
     };
@@ -181,7 +181,7 @@ formSendBtn.addEventListener('click',()=>
     // var a = 0;
 
         if(document.forms[0].checkValidity()){
-            alert("Los datos han enviado correctamente");
+            alert("Los datos se han enviado correctamente");
             // alert("Los datos han enviado correctamente a las "+ new Date().getHours +" y "+ new Date().getMinutes);
         }
     //     else{
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // console.log(item);
                 localStorage.setItem(item[0],item[1]);
                 //TODO: make items case insensitive
-                
+                console.log(item[0]+" guardado");
             }
         }
         console.log(localStorage.getItem("name"));

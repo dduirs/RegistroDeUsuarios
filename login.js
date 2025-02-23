@@ -67,28 +67,24 @@ passwordLogin.addEventListener('keypress', function (e) {
 
 formSendBtn.addEventListener('click',(e)=>
     {
-    var email = document.getElementById("correo");
-    if(document.forms[0].checkValidity()){
-        if(email.value === localStorage.getItem("correo")){
-            // alert("Email match");
-            // if(passwordLogin.value === ""){
-            //     e.preventDefault;
-            //     // console.log("contrasena vacia");
-            // }
-            if(passwordLogin.value !== localStorage.getItem("contrasena")){
-                e.preventDefault;
-                alert("La contrasena esta incorrecta");
-            }else{
-                // alert("Los datos han enviado correctamente");
-                formSendBtn.setAttribute("type","submit");
-            }
-        }else{
-            e.preventDefault;
-            alert("La contrasena o correo esta incorrecta");
-        }
-    }else{
-        alert("La contrasena o correo esta incorrecta");
-    }
+    // var email = document.getElementById("correo");
+    // if(document.forms[0].checkValidity()){
+    //     if(email.value === localStorage.getItem("correo")){
+
+    //         if(passwordLogin.value !== localStorage.getItem("contrasena")){
+    //             e.preventDefault;
+    //             alert("La contraseña no es correcta");
+    //         }else{
+    //             formSendBtn.setAttribute("type","submit");
+    //         }
+    //     }else{
+    //         e.preventDefault;
+    //         alert("La contraseña o el correo no es correcto");
+    //     }
+    // }else{
+    //     alert("La contraseña o el correo no es correcto");
+    // }
+    formSendBtn.setAttribute("type","submit");
 });
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -10,7 +10,7 @@
 </head>
 
 <noscript>
-    <header>Tu navegador no soporta JavaScript</header>
+    <header>Tu navegador no es compatible con JavaScript</header>
 </noscript>
 <body>
     
@@ -18,14 +18,14 @@
         <main>
             <form id="login" action="inicio.html" method="POST" target="_parent">
                 
-                <header><h3>Log in</h3></header>
+                <header><h3>Iniciar sesión</h3></header>
 
-                <label id="correoLabel" for="correo">Correo electrónico:</label><br>
+                <label id="correoLabel" for="correo">Correo electrónico:</label>
                 <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.es"
                     autocomplete="email" required="required" title="Escribe un correo electrónico valido"
                     tabindex="1" autofocus pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$">
-                <br>
-                <label id="passwordLoginLabel" for="contrasenaLogin" style="opacity:0">Contraseña:</label><br>
+
+                <label id="passwordLoginLabel" for="contrasenaLogin" style="opacity:0">Contraseña:</label>
                 <input type="password" id="contrasenaLogin" name="contrasenaLogin" placeholder="contraseña" required="required" minlength="8"
                     tabindex="2" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
                 <button type="button" id="revealPassword">
@@ -35,7 +35,7 @@
                         </path>
                     </svg>
                 </button>
-                <br>
+
                 <input id="recordarCuenta" type="checkbox" name="recordarCuenta" tabindex="3">
                 <label for="recordarCuenta" id="recordarCuentaLabel">Recordar mi cuenta</label>
                 
